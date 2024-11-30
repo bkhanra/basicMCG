@@ -1,0 +1,46 @@
+body {
+    margin: 10px;
+    text-align: center;
+    background-color: grey;
+}
+
+#heading {
+    height: 100px;
+    padding: 5px;
+    width: 100%;
+    background-color: #564302;
+    border-radius: 10px;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#heading h1 {
+    color: yellow;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+#question-container {
+    margin-top: 130px;
+    /* Push down to account for fixed heading */
+    width: 800px;
+    height: auto;
+    left: 50%;
+    transform: translateX(41%);
+    z-index: 1000;
+    padding: 5px;
+    background-color: #ffdd56;
+    border-radius: 10px;
+
+}
+
+.questions {
+    margin: 5px;
+    padding: 10px;
+    text-align: left;
+    background-color: #57f7dc;
+    border-radius: 10px;
+}
