@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const heading = document.querySelector("#heading");
 const questionContainer = document.querySelectorAll("#question-container");
 const body = document.querySelector("body");
@@ -20,3 +21,6 @@ for (let i = 1; i <= questionContainer.length; i++) {
   document.getElementById(element).style.color =
     colors[elementelement.innerHTML];
 }
+=======
+const heading = document.querySelector('#heading');
+>>>>>>> 2c0ad865ac9d36ba7c65f81ead5003e5ec3acfc3
