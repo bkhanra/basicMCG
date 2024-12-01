@@ -2,6 +2,20 @@ const heading = document.querySelector("#heading");
 const questionContainer = document.querySelector("#question-container");
 const questions = document.querySelectorAll(".questions");
 const body = document.querySelector("body");
+const scoreElement = document.querySelector("#score");
+
+const correctAnswers = {
+  q1: 2,
+  q2: 1,
+  q3: 1,
+  q4: 1,
+  q5: 1,
+  q6: 2,
+  q7: 1,
+  q8: 1,
+  q9: 1,
+  q10: 2,
+};
 
 const colors = {
   q1: "#0f0d5c",
@@ -16,6 +30,9 @@ const colors = {
   q10: "#0f0d5c",
 };
 
+let score = 0;
+let answered = 0;
+
 for (let i = 0; i < questions.length; i++) {
   const elementId = `q${i + 1}`;
   const listItems = document.querySelectorAll(`#${elementId} li`);
@@ -29,8 +46,12 @@ for (let i = 0; i < questions.length; i++) {
 
     element.style.color = colors[elementId];
 
-    listItems.forEach((li) => {
-      li.innerHTML = `<input type="radio" name="${elementId}">${li.textContent}`;
+    listItems.forEach((li, index) => {
+      li.innerHTML = `<input type="radio" name="${elementId}" value="${
+        index + 1
+      }">${li.textContent}`;
+      li.style.display = "inline-block";
+      li.style.padding = "5px";
 
       let input = li.querySelector('input[type="radio"]');
 
@@ -42,8 +63,22 @@ for (let i = 0; i < questions.length; i++) {
         inputs.forEach((radio) => {
           radio.disabled = true;
         });
+
+        const selectedAnswer = parseInt(input.value);
+
+        if (selectedAnswer === correctAnswers[elementId]) {
+          li.style.backgroundColor = "green";
+          score++;
+        } else {
+          li.style.backgroundColor = "red";
+        }
+        answered++;
       });
     });
   }
 }
+
+scoreElement.addEventListener("click", () => {
+  scoreElement.textContent = `Score: ${score} out of ${answered}`;
+});
 
