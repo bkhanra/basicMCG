@@ -26,9 +26,24 @@ for (let i = 0; i < questions.length; i++) {
     uls.forEach((ul) => {
       ul.style.listStyle = "none";
     });
+
     element.style.color = colors[elementId];
+
     listItems.forEach((li) => {
-      li.innerHTML = `<input type='radio' name=${elementId}>${li.textContent}`;
+      li.innerHTML = `<input type="radio" name="${elementId}">${li.textContent}`;
+
+      let input = li.querySelector('input[type="radio"]');
+
+      input.addEventListener("change", () => {
+        let inputs = document.querySelectorAll(
+          `#${elementId} li input[type="radio"]`
+        );
+
+        inputs.forEach((radio) => {
+          radio.disabled = true;
+        });
+      });
     });
   }
 }
+
