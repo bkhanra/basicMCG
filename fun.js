@@ -81,6 +81,12 @@ for (let i = 0; i < questions.length; i++) {
 
 scoreElement.addEventListener("click", () => {
   scoreElement.textContent = `Score: ${score} out of ${answered}`;
+  if (answered < 10) {
+    setTimeout(() => {
+      scoreElement.textContent = "Show Score";
+    }, 2000);
+  }
+
 });
 
 toggleInput.addEventListener("change", () => {
