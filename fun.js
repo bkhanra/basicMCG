@@ -1,4 +1,5 @@
 const heading = document.querySelector("#heading");
+const toggleInput = document.querySelector(".toggle-input");
 const questionContainer = document.querySelector("#question-container");
 const questions = document.querySelectorAll(".questions");
 const body = document.querySelector("body");
@@ -80,5 +81,17 @@ for (let i = 0; i < questions.length; i++) {
 
 scoreElement.addEventListener("click", () => {
   scoreElement.textContent = `Score: ${score} out of ${answered}`;
+});
+
+toggleInput.addEventListener("change", () => {
+  if (toggleInput.checked) {
+    body.style.backgroundColor = "black";
+    heading.style.backgroundColor = "#564302";
+    heading.style.color = "yellow";
+  } else {
+    body.style.backgroundColor = "white";
+    heading.style.backgroundColor = "yellow";
+    heading.style.color = "#564302";
+  }
 });
 

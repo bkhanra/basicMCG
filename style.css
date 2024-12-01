@@ -1,7 +1,7 @@
 body {
     margin: 10px;
     text-align: center;
-    background-color: grey;
+    background-color: white;
 }
 
 #heading {
@@ -9,6 +9,7 @@ body {
     padding: 5px;
     width: 100%;
     background-color: #564302;
+    color: yellow;
     border-radius: 10px;
     position: fixed;
     top: 0px;
@@ -18,53 +19,7 @@ body {
 }
 
 #heading h1 {
-    color: yellow;
-    padding-top: 10px;
-    margin: 10px;
-}
-
-#question-container {
-    margin-top: 130px;
-    width: 800px;
-    height: auto;
-    left: 50%;
-    transform: translateX(41%);
-    z-index: 1000;
-    padding: 5px;
-    background-color: #ffdd56;
-    border-radius: 10px;
-
-}
-
-.questions {
-    margin: 5px;
-    padding: 10px;
-    text-align: left;
-    background-color: #57f7dc;
-    border-radius: 10px;
-}
-
-body {
-    margin: 10px;
-    text-align: center;
-    background-color: grey;
-}
-
-#heading {
-    height: 100px;
-    padding: 5px;
-    width: 100%;
-    background-color: #564302;
-    border-radius: 10px;
-    position: fixed;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-#heading h1 {
-    color: yellow;
+    
     padding-top: 10px;
     margin: 10px;
 }
@@ -92,3 +47,54 @@ body {
     border-radius: 10px;
 }
 
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.toggle-input:checked+.toggle-slider {
+    background-color: #4CAF50;
+}
+
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    top: 4px;
+    right: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.toggle-input:checked+.toggle-slider:before {
+    background-color: black;
+}
