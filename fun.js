@@ -18,10 +18,17 @@ const colors = {
 
 for (let i = 0; i < questions.length; i++) {
   const elementId = `q${i + 1}`;
+  const listItems = document.querySelectorAll(`#${elementId} li`);
+  const uls = document.querySelectorAll(`#${elementId} ul`);
   const element = document.getElementById(elementId);
 
-  // Checking if the element exists
   if (element) {
+    uls.forEach((ul) => {
+      ul.style.listStyle = "none";
+    });
     element.style.color = colors[elementId];
+    listItems.forEach((li) => {
+      li.innerHTML = `<input type='radio' name=${elementId}>${li.textContent}`;
+    });
   }
 }
